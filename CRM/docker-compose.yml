@@ -1,0 +1,22 @@
+services:
+  crm_db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: crm_transacional_db
+      POSTGRES_USER: crm_user
+      POSTGRES_PASSWORD: crm_password
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+      - crm_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - crm_network
+
+volumes:
+  crm_data:
+
+networks:
+  crm_network:
+    driver: bridge

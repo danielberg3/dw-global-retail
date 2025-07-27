@@ -1,0 +1,21 @@
+services:
+  dw_db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: dw_db
+      POSTGRES_USER: dw_user
+      POSTGRES_PASSWORD: dw_password
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+      - dw_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - dw_network
+volumes:
+  dw_data:
+
+networks:
+  dw_network:
+    driver: bridge
