@@ -1,11 +1,11 @@
 CREATE TABLE dm_loja (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     gerente VARCHAR(255)
 );
 
 CREATE TABLE dm_promocao (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     tipo VARCHAR(100),
     data_inicio DATE,
@@ -13,20 +13,20 @@ CREATE TABLE dm_promocao (
 );
 
 CREATE TABLE dm_fornecedor (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     pais VARCHAR(100)
 );
 
 CREATE TABLE dm_produto (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     categoria VARCHAR(100),
     preco_fornecimento DECIMAL(10, 2)
 );
 
 CREATE TABLE dm_cliente (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     idade INTEGER,
     genero VARCHAR(50),
@@ -34,22 +34,22 @@ CREATE TABLE dm_cliente (
 );
 
 CREATE TABLE dm_vendedor (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE dm_cidade (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE dm_estado (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE dm_regiao (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL UNIQUE
 );
 
